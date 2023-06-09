@@ -1,9 +1,90 @@
 <!-- In HTML Comments are written like this -->
 <!-- They can all be removed for your apps -->
 <!doctype html> <!-- This first line tells browsers to expect modern standard html 5 -->
-<html lang="en-gb"> <!-- This is indicates the page is written in British English, useful for accessibility -->
-<meta charset="utf-8"> <!-- This indicates how the file is encoded. utf-8 is standard -->
-<title>Your Web-app Title</title> <!-- All pages need a title, this will be displayed in the browser's title bar -->
-<link rel="stylesheet" href="default.css"> <!-- Import style sheet – default.css -->
-<link rel="icon" href="./assets/favicon.png"> <!-- Import 'Favorites Icon' – favicon.png -->
-<script type="module" src="main.js"></script> <!-- Load the main script. Must be type="module". Have only one of these -->
+<head>
+    <html lang="en-gb"> <!-- This is indicates the page is written in British English, useful for accessibility -->
+    <meta charset="utf-8"> <!-- This indicates how the file is encoded. utf-8 is standard -->
+    <title>Blackjack by Acar Gök</title> <!-- All pages need a title, this will be displayed in the browser's title bar -->
+    <link rel="stylesheet" href="default.css"> <!-- Import style sheet – default.css -->
+    <link rel="icon" href="./assets/blackjack-icon.svg"> <!-- Import 'Favorites Icon' – favicon.png -->
+    <script src="main.js" type="module"></script>
+</head>
+<body class="body">
+    <section class="wf-section">
+      <h1 class="heading" id="header">Blackjack</h1>
+    </section>
+    <section class="section-2 wf-section">
+      <a class="rules" href="#popup1">Rules</a>
+      <div id="popup1" class="overlay">
+        <div class="popup">
+            <h2>Blackjack Rules</h2>
+            <a class="close" href="#">&times;</a>
+            <div class="content">
+                The objective of Blackjack is to get as close to 21 points as possible without going over it.
+                <br>
+                <br>
+                All the cards have their face values in points (3 is 3 points, 7 is 7 points etc.).
+                The face cards (J, Q, and K) are worth 10 points.
+                The Ace is either worth 1 or 11 points, whichever is more useful.
+                <br>
+                <br>
+                The player starts with 2 cards and has the option to hit or stand.
+                Hit means to ask for another card, and stand means to stop.
+                One card of the dealer (called the "upcard") is visible to everyone, so the player should consider that card as well when making decisions.
+                The player also has the option to double down after the first two cards,
+                which doubles the bet amount and the player gets only one more card.
+                In this case, the card is dealt horizontally to indicate that the player can not receive more cards.
+                <br>
+                <br>
+                If the player goes over 21 points (aka "to bust"), dealer wins and player loses their bet.
+                If the player gets dealt a 21 from the first two cards, it is called a blackjack and player wins 5:2 of the bet.
+                The player also wins if they don't go bust after having 5 cards. This is a variation rule called the "5-Card Charlie".
+                <br>
+                <br>
+                Once the player turn ends, the dealer starts to play.
+                By casino rules, the dealer has to draw cards until he reaches 17, then has to stop.
+                After both the player and the dealer plays, and if neither of them went bust, the one closer to 21 wins.
+                <br>
+                <br>
+                View the console for a real-time explanation as the game is played.
+            </div>
+        </div>
+      </div>
+    </section>
+    <section class="section-2 wf-section">
+      <div class="div-block">
+        <div><strong class="bold-text" id="dealerText">Dealer:</strong></div>
+        <div class="text-block-5"><strong id="dealerTotal"></strong></div>
+      </div><img src="./assets/Playing Cards/red.png" loading="lazy" width="120" alt="" class="image-8" id="dealerCard1">
+      <img src="./assets/Playing Cards/red.png" loading="lazy" width="120" alt="" class="image-3" id="dealerCard2">
+      <img src="" loading="lazy" width="120" alt="" class="image-4" id="dealerCard3">
+      <img src="" loading="lazy" width="120" alt="" class="image-7" id="dealerCard4">
+      <img src="" loading="lazy" width="120" alt="" class="image-6" id="dealerCard5">
+      <img src="" loading="lazy" width="120" alt="" class="image-5" id="dealerCard6">
+    </section>
+    <section class="section-2 wf-section">
+      <a id="play" href="#" class="button w-button">Play</a>
+    </section>
+    <section class="section-3 wf-section">
+      <div id="balance" class="text-block">Balance: £100</div>
+    </section>
+    <section class="section-2 wf-section">
+      <div class="div-block-2">
+        <div><strong class="bold-text" id="playerText">Player:</strong></div>
+        <div class="text-block-5"><strong id="playerTotal"></strong></div>
+      </div><img src="./assets/Playing Cards/red.png" loading="lazy" width="120" alt="" class="image-9" id="playerCard1">
+      <img src="./assets/Playing Cards/red.png" loading="lazy" width="120" alt="" class="image-10" id="playerCard2">
+      <img src="" loading="lazy" width="120" alt="" class="image-11" id="playerCard3">
+      <img src="" loading="lazy" width="120" alt="" class="image-12" id="playerCard4">
+      <img src="" loading="lazy" width="120" alt="" class="image-13" id="playerCard5">
+    </section>
+    <section class="section-4 wf-section">
+      <a href="#" id="hitbutton" class="button-copy w-button">Hit</a>
+      <a href="#" id="standbutton" class="button-2 w-button">Stand</a>
+      <a href="#" id="doublebutton" class="button-2-copy w-button">Double</a>
+    </section>
+    <section>
+        <div id="alert" class="alert"> </div>
+    </section>
+  </body>
+</html>
